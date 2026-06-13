@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Beautiful Memories ✨</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap');
 
         * {
             margin: 0;
@@ -24,7 +24,7 @@
                     #ffd1dc 100%);
             background-size: 400% 400%;
             animation: gradientFlow 15s ease infinite;
-            font-family: 'Quicksand', sans-serif;
+            font-family: 'Be Vietnam Pro', sans-serif;
             overflow-x: hidden;
             color: #4a4a4a;
         }
@@ -142,7 +142,7 @@
         }
 
         .welcome h1 {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Baloo 2', cursive;
             font-size: 4rem;
             color: #ff69b4;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -214,7 +214,7 @@
         }
 
         .memory-date {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Baloo 2', cursive;
             color: #ff69b4;
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
@@ -224,6 +224,93 @@
             font-size: 1rem;
             line-height: 1.5;
             color: #666;
+        }
+
+        .legacy-memory-container {
+            display: none;
+        }
+
+        .memory-showcase {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 2rem;
+            position: relative;
+            z-index: 3;
+            text-align: center;
+        }
+
+        .memory-intro h2 {
+            font-family: 'Baloo 2', cursive;
+            font-size: 2.6rem;
+            color: #ff69b4;
+            margin-bottom: 0.5rem;
+        }
+
+        .memory-intro p {
+            color: #8f3c73;
+            font-size: 1.15rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .photo-marquee {
+            width: 100%;
+            overflow: hidden;
+            padding: 1rem 0 1.5rem;
+            -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+        }
+
+        .photo-track {
+            display: flex;
+            width: max-content;
+            gap: 1.2rem;
+            animation: photosLeftToRight 55s linear infinite;
+        }
+
+        .photo-track:hover {
+            animation-play-state: paused;
+        }
+
+        .photo-card {
+            flex: 0 0 220px;
+            height: 310px;
+            padding: 0.7rem;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 12px 28px rgba(255, 105, 180, 0.22);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 14px;
+            display: block;
+        }
+
+        .photo-card figcaption {
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b23b7b;
+            font-size: 1rem;
+            line-height: 1.25;
+            padding: 0.35rem 0.25rem 0;
+        }
+
+        @keyframes photosLeftToRight {
+            from {
+                transform: translateX(-50%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
         }
 
         /* Final Message Section */
@@ -238,7 +325,7 @@
         }
 
         .final-message h2 {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Baloo 2', cursive;
             font-size: 3rem;
             color: #ff69b4;
             margin-bottom: 2rem;
@@ -352,6 +439,27 @@
                 grid-template-columns: 1fr;
             }
 
+            .memory-showcase {
+                padding-inline: 1rem;
+            }
+
+            .memory-intro h2 {
+                font-size: 2rem;
+            }
+
+            .photo-card {
+                flex-basis: 170px;
+                height: 255px;
+            }
+
+            .photo-card img {
+                height: 180px;
+            }
+
+            .photo-card figcaption {
+                font-size: 0.9rem;
+            }
+
             .final-message h2 {
                 font-size: 2.5rem;
             }
@@ -371,11 +479,43 @@
     </div>
 
     <section class="welcome">
-        <h1>Our Beautiful Moments Together</h1>
-        <p>Every moment spent with you has been magical. Let's cherish these precious memories ...</p>
+        <h1>Nhựng giây phút đáng nhớ</h1>
+        <p>Mỗi khoảnh khắc bên Cọp thúi cụa tui. Hãy trân trọng những kỷ niệm quý giá này nhé. ...</p>
     </section>
 
-    <div class="memory-container">
+    <section class="memory-showcase">
+        <div class="memory-intro">
+            <h2>Những khoảnh khắc dành cho ấy ấy "><" </h2>
+            <p>Gửi đến người tôi yêu những lời chúc thân thương nhất.</p>
+        </div>
+
+        <div class="photo-marquee">
+            <div class="photo-track">
+                <figure class="photo-card"><img src="./d1.jpg" alt="Khoảnh khắc yêu thương 1"><figcaption>Luôn cười thật tươi nhé em.</figcaption></figure>
+                <figure class="photo-card"><img src="./d2.jpg" alt="Khoảnh khắc yêu thương 2"><figcaption>Chúc em một tuổi mới dịu dàng.</figcaption></figure>
+                <figure class="photo-card"><img src="./d3.jpg" alt="Khoảnh khắc yêu thương 3"><figcaption>Mong mọi điều tốt đẹp đến với em.</figcaption></figure>
+                <figure class="photo-card"><img src="./d4.jpg" alt="Khoảnh khắc yêu thương 4"><figcaption>Cảm ơn em vì đã ở đây.</figcaption></figure>
+                <figure class="photo-card"><img src="./d5.jpg" alt="Khoảnh khắc yêu thương 5"><figcaption>Thương em nhiều hơn mỗi ngày.</figcaption></figure>
+                <figure class="photo-card"><img src="./d6.jpg" alt="Khoảnh khắc yêu thương 6" onerror="this.closest('.photo-card').remove()"><figcaption>Chúc em luôn được chở che.</figcaption></figure>
+                <figure class="photo-card"><img src="./d7.jpg" alt="Khoảnh khắc yêu thương 7"><figcaption>Tuổi mới thật nhiều niềm vui.</figcaption></figure>
+                <figure class="photo-card"><img src="./d8.jpg" alt="Khoảnh khắc yêu thương 8"><figcaption>Mọi ước mơ của em sẽ nở hoa.</figcaption></figure>
+                <figure class="photo-card"><img src="./d9.jpg" alt="Khoảnh khắc yêu thương 9"><figcaption>Em là điều ngọt ngào nhất.</figcaption></figure>
+                <figure class="photo-card"><img src="./d10.jpg" alt="Khoảnh khắc yêu thương 10"><figcaption>Chúc em luôn rạng rỡ.</figcaption></figure>
+                <figure class="photo-card"><img src="./d11.jpg" alt="Khoảnh khắc yêu thương 11"><figcaption>Bên em là bình yên của anh.</figcaption></figure>
+                <figure class="photo-card"><img src="./d12.jpg" alt="Khoảnh khắc yêu thương 12"><figcaption>Mong em được hạnh phúc thật lâu.</figcaption></figure>
+                <figure class="photo-card"><img src="./d13.jpg" alt="Khoảnh khắc yêu thương 13"><figcaption>Ngày của em phải thật đặc biệt.</figcaption></figure>
+                <figure class="photo-card"><img src="./d14.jpg" alt="Khoảnh khắc yêu thương 14"><figcaption>Anh luôn tự hào về em.</figcaption></figure>
+                <figure class="photo-card"><img src="./d15.jpg" alt="Khoảnh khắc yêu thương 15"><figcaption>Chúc em được yêu đúng như em xứng đáng.</figcaption></figure>
+                <figure class="photo-card"><img src="./d16.jpg" alt="Khoảnh khắc yêu thương 16"><figcaption>Luôn giữ trái tim ấm áp này nhé.</figcaption></figure>
+                <figure class="photo-card"><img src="./d17.jpg" alt="Khoảnh khắc yêu thương 17"><figcaption>Mỗi khoảnh khắc có em đều đáng nhớ.</figcaption></figure>
+                <figure class="photo-card"><img src="./d18.jpg" alt="Khoảnh khắc yêu thương 18"><figcaption>Chúc em một đời an nhiên.</figcaption></figure>
+                <figure class="photo-card"><img src="./d19.jpg" alt="Khoảnh khắc yêu thương 19"><figcaption>Yêu em bằng tất cả chân thành.</figcaption></figure>
+                <figure class="photo-card"><img src="./d20.jpg" alt="Khoảnh khắc yêu thương 20"><figcaption>Happy birthday, tình yêu của anh.</figcaption></figure>
+            </div>
+        </div>
+    </section>
+
+    <div class="memory-container legacy-memory-container">
         <div class="memory-card">
             <img src="./d1.jpg" alt="First Date" class="memory-img">
             <div class="memory-date">Her Smile Says It All</div>
@@ -404,6 +544,13 @@
         <p>You deserve all the joy in the world—keep shining and spreading your beautiful energy.✨</p>
         <a href="#" class="goodbye-btn">Until We Meet Again 💝</a>
     </section>
+    <script>
+        const photoTrack = document.querySelector('.photo-track');
+
+        if (photoTrack) {
+            photoTrack.innerHTML += photoTrack.innerHTML;
+        }
+    </script>
 </body>
 
 </html>
